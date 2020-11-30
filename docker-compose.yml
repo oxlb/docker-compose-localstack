@@ -1,6 +1,6 @@
 version: '3.0'
 
-services:
+services: 
 
   localstack:
     image: localstack/localstack:latest
@@ -8,9 +8,8 @@ services:
       - AWS_DEFAULT_REGION=us-east-1
       - EDGE_PORT=4566
       - SERVICES=lambda,s3
-    ports:
+    ports: 
       - '4566:4566'
-      - '8055:8080'
-    volumes:
-      - "${TMPDIR:-/tmp/localstack}:/tmp/localstack"
+    volumes: 
+      - "${TEMPDIR:-/tmp/localstack}:/tmp/localstack"
       - "/var/run/docker.sock:/var/run/docker.sock"
